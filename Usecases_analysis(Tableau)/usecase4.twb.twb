@@ -1,0 +1,3338 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0917.1648                               -->
+<workbook original-version='18.1' source-build='2019.2.4 (20192.19.0917.1648)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Restaurant (BUDT758_DB_0504_06)' inline='true' name='federated.08ox0pt1n8pwz314coa111i8pmoo' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='mssqllab.rhsmith.umd.edu,9758' name='sqlserver.1g6gei11ino5en16x0eee0wmpfqw'>
+            <connection authentication='sqlserver' class='sqlserver' dbname='BUDT758_DB_0504_06' odbc-native-protocol='yes' one-time-sql='' server='mssqllab.rhsmith.umd.edu,9758' username='BUDT758_Student_186' />
+          </named-connection>
+        </named-connections>
+        <relation join='full' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Have].[busId]' />
+              <expression op='[Shuttle].[busId]' />
+            </expression>
+          </clause>
+          <relation join='full' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Have].[stopId]' />
+                <expression op='[Stop].[stopId]' />
+              </expression>
+            </clause>
+            <relation join='full' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[Restaurant].[stopId]' />
+                  <expression op='[Have].[stopId]' />
+                </expression>
+              </clause>
+              <relation join='full' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[Belong].[categoryId]' />
+                    <expression op='[Category].[categoryId]' />
+                  </expression>
+                </clause>
+                <relation join='full' type='join'>
+                  <clause type='join'>
+                    <expression op='='>
+                      <expression op='[Restaurant].[resId]' />
+                      <expression op='[Belong].[resId]' />
+                    </expression>
+                  </clause>
+                  <relation connection='sqlserver.1g6gei11ino5en16x0eee0wmpfqw' name='Restaurant' table='[dbo].[Restaurant]' type='table' />
+                  <relation connection='sqlserver.1g6gei11ino5en16x0eee0wmpfqw' name='Belong' table='[dbo].[Belong]' type='table' />
+                </relation>
+                <relation connection='sqlserver.1g6gei11ino5en16x0eee0wmpfqw' name='Category' table='[dbo].[Category]' type='table' />
+              </relation>
+              <relation connection='sqlserver.1g6gei11ino5en16x0eee0wmpfqw' name='Have' table='[dbo].[Have]' type='table' />
+            </relation>
+            <relation connection='sqlserver.1g6gei11ino5en16x0eee0wmpfqw' name='Stop' table='[dbo].[Stop]' type='table' />
+          </relation>
+          <relation connection='sqlserver.1g6gei11ino5en16x0eee0wmpfqw' name='Shuttle' table='[dbo].[Shuttle]' type='table' />
+        </relation>
+        <cols>
+          <map key='[busFinalDest]' value='[Shuttle].[busFinalDest]' />
+          <map key='[busId (Shuttle)]' value='[Shuttle].[busId]' />
+          <map key='[busId]' value='[Have].[busId]' />
+          <map key='[busName]' value='[Shuttle].[busName]' />
+          <map key='[busNo]' value='[Shuttle].[busNo]' />
+          <map key='[categoryId (Category)]' value='[Category].[categoryId]' />
+          <map key='[categoryId]' value='[Belong].[categoryId]' />
+          <map key='[categoryName]' value='[Category].[categoryName]' />
+          <map key='[friEndTime]' value='[Restaurant].[friEndTime]' />
+          <map key='[friStartTime]' value='[Restaurant].[friStartTime]' />
+          <map key='[monEndTime]' value='[Restaurant].[monEndTime]' />
+          <map key='[monStartTime]' value='[Restaurant].[monStartTime]' />
+          <map key='[resCity]' value='[Restaurant].[resCity]' />
+          <map key='[resId (Belong)]' value='[Belong].[resId]' />
+          <map key='[resId]' value='[Restaurant].[resId]' />
+          <map key='[resLat]' value='[Restaurant].[resLat]' />
+          <map key='[resLong]' value='[Restaurant].[resLong]' />
+          <map key='[resName]' value='[Restaurant].[resName]' />
+          <map key='[resPhoneNo]' value='[Restaurant].[resPhoneNo]' />
+          <map key='[resPostalCode]' value='[Restaurant].[resPostalCode]' />
+          <map key='[resPrice]' value='[Restaurant].[resPrice]' />
+          <map key='[resRevCNT]' value='[Restaurant].[resRevCNT]' />
+          <map key='[resStars]' value='[Restaurant].[resStars]' />
+          <map key='[resState]' value='[Restaurant].[resState]' />
+          <map key='[resStreet]' value='[Restaurant].[resStreet]' />
+          <map key='[resTransactionType]' value='[Restaurant].[resTransactionType]' />
+          <map key='[satEndTime]' value='[Restaurant].[satEndTime]' />
+          <map key='[satStartTime]' value='[Restaurant].[satStartTime]' />
+          <map key='[stopId (Have)]' value='[Have].[stopId]' />
+          <map key='[stopId (Stop)]' value='[Stop].[stopId]' />
+          <map key='[stopId]' value='[Restaurant].[stopId]' />
+          <map key='[stopLat]' value='[Stop].[stopLat]' />
+          <map key='[stopLong]' value='[Stop].[stopLong]' />
+          <map key='[stopName]' value='[Stop].[stopName]' />
+          <map key='[sunEndTime]' value='[Restaurant].[sunEndTime]' />
+          <map key='[sunStartTime]' value='[Restaurant].[sunStartTime]' />
+          <map key='[thuEndTime]' value='[Restaurant].[thuEndTime]' />
+          <map key='[thuStartTime]' value='[Restaurant].[thuStartTime]' />
+          <map key='[tuesEndTime]' value='[Restaurant].[tuesEndTime]' />
+          <map key='[tuesStartTime]' value='[Restaurant].[tuesStartTime]' />
+          <map key='[walktimeToRes]' value='[Restaurant].[walktimeToRes]' />
+          <map key='[wedEndTime]' value='[Restaurant].[wedEndTime]' />
+          <map key='[wedStartTime]' value='[Restaurant].[wedStartTime]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>resId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resId]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resId</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>22</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resName]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resName</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>70</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resStreet</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resStreet]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resStreet</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>70</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resCity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resCity]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resCity</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>25</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resState</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resState]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resState</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resPostalCode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resPostalCode]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resPostalCode</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>5</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resPhoneNo</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resPhoneNo]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resPhoneNo</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resLat</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[resLat]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resLat</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <scale>13</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resLong</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[resLong]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resLong</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <scale>13</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resStars</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[resStars]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resStars</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>3</precision>
+            <scale>1</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_NUMERIC&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resRevCNT</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[resRevCNT]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resRevCNT</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resPrice</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[resPrice]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resPrice</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resTransactionType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resTransactionType]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>resTransactionType</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>22</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monStartTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[monStartTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>monStartTime</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monEndTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[monEndTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>monEndTime</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tuesStartTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[tuesStartTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>tuesStartTime</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tuesEndTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[tuesEndTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>tuesEndTime</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>wedStartTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[wedStartTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>wedStartTime</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>wedEndTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[wedEndTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>wedEndTime</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>thuStartTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[thuStartTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>thuStartTime</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>thuEndTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[thuEndTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>thuEndTime</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>friStartTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[friStartTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>friStartTime</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>friEndTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[friEndTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>friEndTime</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>satStartTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[satStartTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>satStartTime</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>satEndTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[satEndTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>satEndTime</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sunStartTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[sunStartTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>sunStartTime</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sunEndTime</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[sunEndTime]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>sunEndTime</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIME&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIME&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stopId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[stopId]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>stopId</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>5</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>walktimeToRes</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[walktimeToRes]</local-name>
+            <parent-name>[Restaurant]</parent-name>
+            <remote-alias>walktimeToRes</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>6</precision>
+            <scale>2</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[resId (Belong)]</local-name>
+            <parent-name>[Belong]</parent-name>
+            <remote-alias>resId</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>22</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>categoryId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[categoryId]</local-name>
+            <parent-name>[Belong]</parent-name>
+            <remote-alias>categoryId</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>4</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>categoryId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[categoryId (Category)]</local-name>
+            <parent-name>[Category]</parent-name>
+            <remote-alias>categoryId</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>4</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>categoryName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[categoryName]</local-name>
+            <parent-name>[Category]</parent-name>
+            <remote-alias>categoryName</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>busId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[busId]</local-name>
+            <parent-name>[Have]</parent-name>
+            <remote-alias>busId</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>6</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stopId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[stopId (Have)]</local-name>
+            <parent-name>[Have]</parent-name>
+            <remote-alias>stopId</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>5</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stopId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[stopId (Stop)]</local-name>
+            <parent-name>[Stop]</parent-name>
+            <remote-alias>stopId</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>5</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stopName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[stopName]</local-name>
+            <parent-name>[Stop]</parent-name>
+            <remote-alias>stopName</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stopLat</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[stopLat]</local-name>
+            <parent-name>[Stop]</parent-name>
+            <remote-alias>stopLat</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>16</precision>
+            <scale>13</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stopLong</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[stopLong]</local-name>
+            <parent-name>[Stop]</parent-name>
+            <remote-alias>stopLong</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>16</precision>
+            <scale>13</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>busId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[busId (Shuttle)]</local-name>
+            <parent-name>[Shuttle]</parent-name>
+            <remote-alias>busId</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>6</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>busNo</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[busNo]</local-name>
+            <parent-name>[Shuttle]</parent-name>
+            <remote-alias>busNo</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>3</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>busName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[busName]</local-name>
+            <parent-name>[Shuttle]</parent-name>
+            <remote-alias>busName</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>busFinalDest</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[busFinalDest]</local-name>
+            <parent-name>[Shuttle]</parent-name>
+            <remote-alias>busFinalDest</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Avg' caption='Lat-all' datatype='real' name='[Calculation_1363183374025850880]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative'>
+        <calculation class='tableau' formula='// Make one measure with all latitude values (from both files)&#13;&#10;if ISNULL([stopLat]) then [resLat] else [stopLat] end' />
+      </column>
+      <column aggregation='Avg' caption='Long-all' datatype='real' name='[Calculation_1363183374026031105]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative'>
+        <calculation class='tableau' formula='// Make one measure with all longitude values (from both files)&#13;&#10;if ISNULL([stopLong]) then [resLong] else [stopLong] end' />
+      </column>
+      <column caption='PriceLabel' datatype='string' name='[Calculation_866380036328996864]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF NULL THEN &apos;No Data Available&apos;&#13;&#10;ELSEIF  AVG([resPrice]) &gt;= 1 AND AVG([resPrice]) &lt; 2 THEN &apos;Inexpensive&apos;&#13;&#10;ELSEIF AVG([resPrice]) &gt;=2 AND AVG([resPrice]) &lt;3 THEN &apos;Reasonable&apos;&#13;&#10;ELSEIF AVG([resPrice]) &gt;=3 AND AVG([resPrice]) &lt;=4 THEN &apos;Expensive&apos;&#13;&#10;END' />
+      </column>
+      <column caption='WeekendOpen' datatype='string' name='[Calculation_866380036640145411]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [satEndTime] &gt;= MAKETIME(23,00,00) OR [sunStartTime] &lt;= MAKETIME(5,00,00)  THEN &apos;Open&apos;&#13;&#10;ELSE &apos;Closed&apos;&#13;&#10;END' />
+      </column>
+      <column caption='Blank' datatype='string' name='[Calculation_866380036647354372]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&quot; &quot;' />
+      </column>
+      <column caption='DeliveryLateNight' datatype='string' name='[Calculation_866380036648648709]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [resTransactionType] = &apos;delivery&apos; AND&#13;&#10;[satStartTime] &lt;= MAKETIME(18,00,00) AND &#13;&#10;[satEndTime] &gt;= MAKETIME(22,00,00) AND &#13;&#10;[sunStartTime] &lt;= MAKETIME(18,00,00) AND &#13;&#10;[sunEndTime] &gt;= MAKETIME(23,00,00) &#13;&#10;THEN &apos;Yes&apos;&#13;&#10;ELSE &apos;No&apos;&#13;&#10;END' />
+      </column>
+      <column caption='Delivers At Night?' datatype='string' name='[DeliveryLateNight (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [resTransactionType] = &apos;delivery&apos; AND&#13;&#10;[satStartTime] &lt;= MAKETIME(18,00,00) AND &#13;&#10;[satEndTime] &gt;= MAKETIME(22,00,00) AND &#13;&#10;[sunStartTime] &lt;= MAKETIME(18,00,00) AND &#13;&#10;[sunEndTime] &gt;= MAKETIME(23,00,00) &#13;&#10;THEN &apos;Yes&apos;&#13;&#10;ELSE &apos;No&apos;&#13;&#10;END' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Bus Final Dest' datatype='string' name='[busFinalDest]' role='dimension' type='nominal' />
+      <column caption='Bus Id' datatype='string' name='[busId]' role='dimension' type='nominal' />
+      <column caption='Bus Name' datatype='string' name='[busName]' role='dimension' type='nominal' />
+      <column caption='Bus No' datatype='string' name='[busNo]' role='dimension' type='nominal' />
+      <column caption='Category Id' datatype='string' name='[categoryId]' role='dimension' type='nominal' />
+      <column caption='Category Name' datatype='string' name='[categoryName]' role='dimension' type='nominal' />
+      <column aggregation='Hour' caption='Fri End Time' datatype='datetime' name='[friEndTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Fri Start Time' datatype='datetime' name='[friStartTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Mon End Time' datatype='datetime' name='[monEndTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Mon Start Time' datatype='datetime' name='[monStartTime]' role='dimension' type='ordinal' />
+      <column caption='Res City' datatype='string' name='[resCity]' role='dimension' semantic-role='' type='nominal' />
+      <column caption='Res Id' datatype='string' name='[resId]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Res Lat' datatype='real' name='[resLat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Res Long' datatype='real' name='[resLong]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Res Name' datatype='string' name='[resName]' role='dimension' type='nominal' />
+      <column caption='Res Phone No' datatype='string' name='[resPhoneNo]' role='dimension' type='nominal' />
+      <column caption='Res Postal Code' datatype='string' name='[resPostalCode]' role='dimension' semantic-role='' type='nominal' />
+      <column caption='Res Price' datatype='integer' name='[resPrice]' role='measure' type='quantitative' />
+      <column caption='Res Rev CNT' datatype='integer' name='[resRevCNT]' role='measure' type='quantitative' />
+      <column caption='Res Stars' datatype='real' name='[resStars]' role='measure' type='quantitative' />
+      <column caption='Res State' datatype='string' name='[resState]' role='dimension' type='nominal' />
+      <column caption='Res Street' datatype='string' name='[resStreet]' role='dimension' semantic-role='' type='nominal' />
+      <column caption='Res Transaction Type' datatype='string' name='[resTransactionType]' role='dimension' type='nominal' />
+      <column caption='Sat End Time' datatype='datetime' name='[satEndTime]' role='dimension' type='ordinal' />
+      <column caption='Sat Start Time' datatype='datetime' name='[satStartTime]' role='dimension' type='ordinal' />
+      <column caption='Stop Id' datatype='string' name='[stopId]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Stop Lat' datatype='real' name='[stopLat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Stop Long' datatype='real' name='[stopLong]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Stop Name' datatype='string' name='[stopName]' role='dimension' type='nominal' />
+      <column aggregation='Hour' caption='Sun End Time' datatype='datetime' name='[sunEndTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Sun Start Time' datatype='datetime' name='[sunStartTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Thu End Time' datatype='datetime' name='[thuEndTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Thu Start Time' datatype='datetime' name='[thuStartTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Tues End Time' datatype='datetime' name='[tuesEndTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Tues Start Time' datatype='datetime' name='[tuesStartTime]' role='dimension' type='ordinal' />
+      <column caption='Walktime To Res' datatype='real' name='[walktimeToRes]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='Wed End Time' datatype='datetime' name='[wedEndTime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Wed Start Time' datatype='datetime' name='[wedStartTime]' role='dimension' type='ordinal' />
+      <column-instance column='[Calculation_866380036648648709]' derivation='None' name='[none:Calculation_866380036648648709:nk]' pivot='key' type='nominal' />
+      <column-instance column='[DeliveryLateNight (copy)]' derivation='None' name='[none:DeliveryLateNight (copy):nk]' pivot='key' type='nominal' />
+      <column-instance column='[busName]' derivation='None' name='[none:busName:nk]' pivot='key' type='nominal' />
+      <column-instance column='[resCity]' derivation='None' name='[none:resCity:nk]' pivot='key' type='nominal' />
+      <column-instance column='[resTransactionType]' derivation='None' name='[none:resTransactionType:nk]' pivot='key' type='nominal' />
+      <column-instance column='[stopName]' derivation='None' name='[none:stopName:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_866380036328996864]' derivation='User' name='[usr:Calculation_866380036328996864:nk]' pivot='key' type='nominal' />
+      <group caption='Top3Categories' name='[Bottom3Categories]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='3' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='COUNT([resId])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[categoryName]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <group caption='Bottom3PerCity' name='[Bottom3PerCity]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='3' end='bottom' function='end' units='records' user:ui-marker='end'>
+          <groupfilter direction='DESC' expression='COUNT([resId])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[resId]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <group caption='PickUpServiceFilter' name='[Set 1]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='member' level='[resTransactionType]' member='&quot;pickup&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </group>
+      <group caption='Top10' name='[Top10]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='20' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='COUNTD([resId])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[resId]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='Res Street, Res Postal Code'>
+          <field>[resStreet]</field>
+          <field>[resPostalCode]</field>
+        </drill-path>
+      </drill-paths>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/Aishwarya/Downloads/Acads/Prof Lee/SQL Lee Project/TerpCravingz (BUDT758_DB_0504_06).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='11/26/2019 09:57:12 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[busFinalDest]' value='[Extract].[busFinalDest]' />
+            <map key='[busId (Shuttle)]' value='[Extract].[busId]' />
+            <map key='[busId]' value='[Extract].[busId1]' />
+            <map key='[busName]' value='[Extract].[busName]' />
+            <map key='[busNo]' value='[Extract].[busNo]' />
+            <map key='[categoryId (Category)]' value='[Extract].[categoryId]' />
+            <map key='[categoryId]' value='[Extract].[categoryId1]' />
+            <map key='[categoryName]' value='[Extract].[categoryName]' />
+            <map key='[friEndTime]' value='[Extract].[friEndTime]' />
+            <map key='[friStartTime]' value='[Extract].[friStartTime]' />
+            <map key='[monEndTime]' value='[Extract].[monEndTime]' />
+            <map key='[monStartTime]' value='[Extract].[monStartTime]' />
+            <map key='[resCity]' value='[Extract].[resCity]' />
+            <map key='[resId (Belong)]' value='[Extract].[resId]' />
+            <map key='[resId]' value='[Extract].[resId1]' />
+            <map key='[resLat]' value='[Extract].[resLat]' />
+            <map key='[resLong]' value='[Extract].[resLong]' />
+            <map key='[resName]' value='[Extract].[resName]' />
+            <map key='[resPhoneNo]' value='[Extract].[resPhoneNo]' />
+            <map key='[resPostalCode]' value='[Extract].[resPostalCode]' />
+            <map key='[resPrice]' value='[Extract].[resPrice]' />
+            <map key='[resRevCNT]' value='[Extract].[resRevCNT]' />
+            <map key='[resStars]' value='[Extract].[resStars]' />
+            <map key='[resState]' value='[Extract].[resState]' />
+            <map key='[resStreet]' value='[Extract].[resStreet]' />
+            <map key='[resTransactionType]' value='[Extract].[resTransactionType]' />
+            <map key='[satEndTime]' value='[Extract].[satEndTime]' />
+            <map key='[satStartTime]' value='[Extract].[satStartTime]' />
+            <map key='[stopId (Have)]' value='[Extract].[stopId]' />
+            <map key='[stopId (Stop)]' value='[Extract].[stopId1]' />
+            <map key='[stopId]' value='[Extract].[stopId2]' />
+            <map key='[stopLat]' value='[Extract].[stopLat]' />
+            <map key='[stopLong]' value='[Extract].[stopLong]' />
+            <map key='[stopName]' value='[Extract].[stopName]' />
+            <map key='[sunEndTime]' value='[Extract].[sunEndTime]' />
+            <map key='[sunStartTime]' value='[Extract].[sunStartTime]' />
+            <map key='[thuEndTime]' value='[Extract].[thuEndTime]' />
+            <map key='[thuStartTime]' value='[Extract].[thuStartTime]' />
+            <map key='[tuesEndTime]' value='[Extract].[tuesEndTime]' />
+            <map key='[tuesStartTime]' value='[Extract].[tuesStartTime]' />
+            <map key='[walktimeToRes]' value='[Extract].[walktimeToRes]' />
+            <map key='[wedEndTime]' value='[Extract].[wedEndTime]' />
+            <map key='[wedStartTime]' value='[Extract].[wedStartTime]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='Restaurant (BUDT758_DB_0504_06)' increment-value='%null%' refresh-type='create' rows-inserted='18137' timestamp-start='2019-11-26 21:57:12.558' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>resId1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resId]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resId1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3110</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resName</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2307</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resStreet</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resStreet]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resStreet</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2739</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resCity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resCity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resCity</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>91</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resState</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resState]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resState</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resPostalCode</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resPostalCode]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resPostalCode</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>131</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resPhoneNo</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resPhoneNo]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resPhoneNo</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2915</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resLat</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[resLat]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resLat</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Restaurant</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3016</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resLong</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[resLong]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resLong</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Restaurant</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2999</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resStars</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[resStars]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resStars</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Restaurant</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resRevCNT</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[resRevCNT]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resRevCNT</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Restaurant</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>819</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resPrice</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[resPrice]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resPrice</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Restaurant</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resTransactionType</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resTransactionType]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resTransactionType</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monStartTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[monStartTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>monStartTime</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monEndTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[monEndTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>monEndTime</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>39</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tuesStartTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[tuesStartTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tuesStartTime</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>42</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tuesEndTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[tuesEndTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tuesEndTime</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>42</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>wedStartTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[wedStartTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>wedStartTime</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>wedEndTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[wedEndTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>wedEndTime</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>42</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>thuStartTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[thuStartTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>thuStartTime</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>thuEndTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[thuEndTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>thuEndTime</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>50</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>friStartTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[friStartTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>friStartTime</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>friEndTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[friEndTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>friEndTime</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>38</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>satStartTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[satStartTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>satStartTime</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>45</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>satEndTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[satEndTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>satEndTime</remote-alias>
+              <ordinal>24</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sunStartTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[sunStartTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sunStartTime</remote-alias>
+              <ordinal>25</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sunEndTime</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[sunEndTime]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sunEndTime</remote-alias>
+              <ordinal>26</ordinal>
+              <family>Restaurant</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stopId2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[stopId]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stopId2</remote-alias>
+              <ordinal>27</ordinal>
+              <family>Restaurant</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>173</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>walktimeToRes</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[walktimeToRes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>walktimeToRes</remote-alias>
+              <ordinal>28</ordinal>
+              <family>Restaurant</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2518</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>resId</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[resId (Belong)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>resId</remote-alias>
+              <ordinal>29</ordinal>
+              <family>Belong</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3110</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>categoryId1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[categoryId]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>categoryId1</remote-alias>
+              <ordinal>30</ordinal>
+              <family>Belong</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>280</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>categoryId</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[categoryId (Category)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>categoryId</remote-alias>
+              <ordinal>31</ordinal>
+              <family>Category</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>280</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>categoryName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[categoryName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>categoryName</remote-alias>
+              <ordinal>32</ordinal>
+              <family>Category</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>280</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>busId1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[busId]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>busId1</remote-alias>
+              <ordinal>33</ordinal>
+              <family>Have</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stopId</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[stopId (Have)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stopId</remote-alias>
+              <ordinal>34</ordinal>
+              <family>Have</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>224</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stopId1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[stopId (Stop)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stopId1</remote-alias>
+              <ordinal>35</ordinal>
+              <family>Stop</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>224</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stopName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[stopName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stopName</remote-alias>
+              <ordinal>36</ordinal>
+              <family>Stop</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>224</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stopLat</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[stopLat]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stopLat</remote-alias>
+              <ordinal>37</ordinal>
+              <family>Stop</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>224</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stopLong</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[stopLong]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stopLong</remote-alias>
+              <ordinal>38</ordinal>
+              <family>Stop</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>224</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>busId</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[busId (Shuttle)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>busId</remote-alias>
+              <ordinal>39</ordinal>
+              <family>Shuttle</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>busNo</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[busNo]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>busNo</remote-alias>
+              <ordinal>40</ordinal>
+              <family>Shuttle</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>busName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[busName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>busName</remote-alias>
+              <ordinal>41</ordinal>
+              <family>Shuttle</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>busFinalDest</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[busFinalDest]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>busFinalDest</remote-alias>
+              <ordinal>42</ordinal>
+              <family>Shuttle</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.473171' group-percentage='0.2' measure-ordering='alphabetic' measure-percentage='0.326829' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='shape' field='[usr:Calculation_866380036328996864:nk]' type='shape'>
+            <map to='circle'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;Reasonable&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;Inexpensive&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:DeliveryLateNight (copy):nk]' type='palette'>
+            <map to='#bab0ac'>
+              <bucket>&quot;No&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Yes&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_866380036648648709:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Yes&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;No&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='shape' field='[none:Calculation_866380036648648709:nk]' type='shape'>
+            <map to='circle'>
+              <bucket>&quot;Yes&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;No&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:stopName:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Auburn Ave and Chestnut Ave&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Baltimore Ave at The Varsity&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Campus Dr at UMUC Lot 19&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Courtyards \#300&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Graduate Hills at 3424 Tulane Dr&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Greenbelt Rd at Severn Building (Inbound)&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Lakeside Dr and Westway (Inbound)&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Metzerott Rd and Greenmead Dr (Outbound)&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Paint Branch Dr and Technology Dr&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Rhode Island Avenue and Fox Street (Outbound)&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Rossborough Ln and Rhode Island Ave&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Takoma-Langley Crossroads Transit Center (Outbound)&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Wayne Ave and Fenton St (Outbound)&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;West Diamond Ave Park &amp; Ride Lot&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Westbrook Dr and Lamont Dr&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Westbrook Dr and Madison St&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Adelphi Rd and Wells Pkwy (Inbound)&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Campus Drive and Rhode Island Avenue (Inbound)&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;College Park Academy&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;College Park Shopping Center (Inbound)&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Fraternity Row \#5&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Greenbelt Rd and 60th Ave&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Guilford Drive and Rowalt Drive (Inbound)&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Ivy Ln and Ridge Rd&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Mandan Rd and Hanover Pkwy&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Mitchell Building (Inbound)&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Regents Dr and Paint Branch Dr (Inbound)&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Ridge Rd and Plateau Pl (Inbound)&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Riverdale Rd and 67th Ct&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Silver Spring Metro Station&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;University Blvd and Tulane Dr&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Wayne Ave and Dale Dr (Outbound)&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;42nd Ave and Oglethorpe St&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Anne Arundel Hall&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Carroll Ave and Chester St&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;East-West Hwy and Taylor Rd (Outbound)&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Farragut St and 42nd Pl&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Flower Ave and Plymouth St&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Good Luck Rd at Lamont Elementary School&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;La Plata Hall&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Mazza GrandMarc&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Metzerott Rd @ System Administration&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;New Hampshire Ave and Adelphi Road (Outbound)&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Ora Glen Dr and Greenbrook Dr&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Regents Drive at XFINITY Center (Outbound)&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Riverdale Rd and Martins Ln&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;University Blvd and Riggs Rd (Outbound)&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;USDA&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;42nd Ave and Madison St&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Baltimore Ave and Underwood St&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Campus Dr at M Circle&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;East-West Hwy and Taylor Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Flower Ave and Plymouth St (Inbound)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Graduate Gardens at 4315 Rowalt Dr&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Greenmead Dr at Maryland 4-H (Inbound)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Knox Road and Yale Avenue&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Lamont Dr and Larchwood St&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Metzerott Rd at Archives II (Inbound)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Montgomery Hall (Outbound)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Pontiac St and Cunningham Dr&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Ridge Rd and Gardenway (Inbound)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Ridge Rd and Research Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Somerset Hall&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Wicomico Hall&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;60th Ave and Ruatan St (Inbound)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Auburn Ave and Riverdale Rd&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Baltimore Ave and Oglethorpe St&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Bowie State University&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Courtyards \#400&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Greenbelt Rd at Severn Building (Outbound)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Lakeside Drive and Westway (Outbound)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Metzerott Rd and New Hampshire Ave (Inbound)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Paint Branch Dr at Lot 4b (Inbound)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Rhode Island Avenue and Hollywood Road (Outbound)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Ridge Road at Green Ridge House Apartments&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Riverdale Rd at St Jude Lutheran Church&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Shoemaker Building&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Union Ln and Fieldhouse Dr&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Wayne Ave and Sligo Creek Pkwy (Outbound)&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Westbrook Dr and Oglethorpe St&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;42nd Ave and Jefferson St&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Art/Sociology Building&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Baltimore Ave and Longfellow St&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Carroll Ave and Glenside Dr&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Graduate Gardens at 4327 Rowalt Dr&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;La Plata Hall (Outbound)&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Metzerott Rd @ UM Observatory&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Mt Pisgah Rd at Chateau Apartments&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;New Hampshire Ave and Oakview Dr (Outbound)&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Prince George&apos;s Community College&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Regents Drive Garage&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Riverdale Rd at Fountain Club Apartments&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Takoma-Langley Crossroads Transit Center (Inbound)&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;University Blvd at Campus Gardens&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Valley Drive at Stadium Drive Garage&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Wayne Ave and Dale Dr (Inbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Adelphi Rd and Van Buren St&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;America Boulevard at Safeway&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Baltimore Avenue and Tecumseh Street&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Baltimore Avenue at Riverdale Park Station (Inbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Cambridge Hall (Outbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Flower Ave at Washington Adventist University (Outbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Hanover Pkwy at Eleanor Roosevelt High School&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Lot Y and Chapel Dr&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Metzerott Road and St. Andrew&apos;s Place (Inbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Pontiac St and 63rd Ave (Inbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Prince George&apos;s Plaza Metro Station (Inbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Regents Dr and Farm Dr (Inbound)&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Riverdale Rd and 62nd Place&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;UMUC - College Park Marriott&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Yale Avenue and Knox Road&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;85th Ave and Longfellow St&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Adelphi Rd at Graduate Hills Apts&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Baltimore Ave and Berwyn Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Campus Drive and Rhode Island Avenue (Outbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Flower Ave and Carroll Ave (Inbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Flower Ave and Kennebec Ave (Outbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Glenn L. Martin Wind Tunnel&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Knox Rd and Hopkins Ave&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Memorial Chapel (Inbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Mitchell Building (Outbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Ora Glen Drive and Morrison Drive&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Regents Dr and Paint Branch Dr (Outbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Ridge Road and Research Road (Outbound)&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Riverdale Rd and Finns Ln&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;University Blvd and Guilford Rd&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;University Blvd at Graduate Hills&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Adelphi Rd and Campus Dr&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;BioSciences Research Building&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Farragut St and Rhode Island Ave&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Flower Ave and Domer Ave (Inbound)&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Hagerstown Hall&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;LDS Institute of Religion&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Metzerott Rd and Riggs Rd (Outbound)&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Metzerott Road and 36th Avenue (Inbound)&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Queensbury Rd and 42nd Pl&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Ritchie Coliseum&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;River Road and Rivertech Court&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Toledo and Belcrest Rd (Outbound)&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Toledo Rd and Adelphi Rd&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Westway and Ridge Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Yale Ave and Lehigh Rd&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;85th Ave at Lenox Court Apartments&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Auburn Ave and 1st St&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Baltimore Ave and Quebec St (Inbound)&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Broken Land Park &amp; Ride East Lot&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Carroll Ave and Wildwood Dr&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Graduate Hills at 3404 Tulane Dr&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Lakecrest Dr and Lakeside Dr&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Metzerott Rd and 24th Ave&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Paint Branch Dr and Regents Dr (Bus Shelter)&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Rhode Island Ave &amp; College Ave&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Rhode Island Avenue and Cherokee Street (Outbound)&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Ridge Road and Ivy Lane&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Riverdale Rd and Auburn Ave&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Riverdale Rd at Heritage Square Apartments&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;South Campus Commons 1 &amp; 2&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Valley Drive at Stadium Drive Garage (Outbound)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;42nd Ave and Queensbury Rd&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Baltimore Ave at National Guard Armory&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Baltimore Avenue and Hartwick Road (Inbound)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Campus Dr at Lot 3&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Elkton Hall&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Greenmead Dr at Maryland 4-H (Outbound)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Hanover Pkwy and Greenbelt Rd&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Lamont Dr and Quentin St&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Metzerott Rd at Archives II (Outbound)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Preinkert Drive at Lot A&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Queensbury Rd and 44th Pl&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Rhode Island Avenue at Hollywood Shopping Center&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Ridge Road and Eastway (Outbound)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;South Campus Commons 5 and 6&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;The Universities at Shady Grove&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;60th Ave and Ruatan St (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Baltimore Ave at University Park Town Hall&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Elkton Hall (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Greenmeade Dr and Metzerott Rd&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Lastner Lane and Julian Court (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Lastner Ln and Ivy Ln&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Mandan Rd and Canning Terr&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Metzerott Rd at Presidential Towers&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Preinkert Drive at Lot MV&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Ridge Road and Gardenway (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;South Campus Commons 3 and 4&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Stadium Drive and University Boulevard&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Stadium Drive Garage&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;University Blvd and New Hampshire Ave&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;University Blvd and Riggs Road (Inbound)&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;85th Ave and Legation St&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;85th Ave at Carrollton Manor Apartments&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Adelphi Rd and Toledo Rd&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Cambridge Hall&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Campus Drive and Diamondback Drive&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Carroll Ave and Garland Ave (Inbound)&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Flower Ave and Hudson (Inbound)&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Hagerstown Hall (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Leonardtown Community Center&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Metzerott Road and 36th Avenue (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Ora Glen Dr and Hanover Pkwy&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Raytheon&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Ridge Rd and Southway&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;River Road at American Center for Physics&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Toledo Rd and Belcrest Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Adelphi Rd and Wells Blvd&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Baltimore Ave and Hamilton St&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Campus Dr at Math Slip&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Courtyards \#500&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Fraternity Row \#11&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Greenbelt Rd at Greenway Center (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Ivy Lane and Lastner Lane&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Lakecrest Drive and Greenbelt Road (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;M-Square&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Metzerott Road and St. Andrew&apos;s Place (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Regents Dr and Farm Dr (Outbound)&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Riverdale Rd and 64th Ave&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;The Enclave&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Union Dr at Lot 1b&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;University Blvd and 25th Ave&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;America Boulevard at Regal Cinemas Hyattsville&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Baltimore Ave and Amherst Rd&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Baltimore Avenue and Berwyn House Road&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Baltimore St &amp; Paca St&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Campus Drive and 50th Avenue&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Denton Hall&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Flower Ave and Hudson (Outbound)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Greenbelt Road and Greenbelt Station Parkway (Inbound)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Lamont Dr and Carrollton Pkwy&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Metzerott Rd and Riggs Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Paint Branch Dr at Lot 4b (Outbound)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Rhode Island Avenue and University Boulevard (Outbound)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Shuttle-UM Base (Inbound)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;The Mall at Prince George&apos;s&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Westbrook Dr and Powhatan St&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Westchester Park Circle&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;60th Ave and Greenbelt Rd (Outbound)&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Auburn Ave and 3rd St&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Baltimore Ave and Quebec St(Outbound)&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;College Park - UMD Metro Station&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Graduate Hills at 3410 Tulane Dr&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Hoff Theater&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Lakecrest Drive and Greenbelt Road (Inbound)&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Metzerott Rd and Adelphi Rd&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Paint Branch Dr and Stadium Dr&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Prince George&apos;s Plaza Metro Station (Outbound)&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Rhode Island Ave and Norwich Rd&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Riverdale Rd at Wildercroft Shopping Center&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;University Blvd at Adelphi Plaza&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Varsity Team House&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Wayne Ave and Fenton St (Inbound)&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Wayne Ave and Sligo Creek Pkwy (Inbound)&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Adelphi Rd at Northwestern HS&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Baltimore Ave and Gallatin St&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Caroll Ave and Garland Ave (Outbound)&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Edgewood Road and Rhode Island Avenue (Outbound)&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Good Luck Rd and Ian St&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Greenbelt Rd at Greenway Center (Inbound)&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Harkins Rd and Annapolis Rd&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Knox Rd and Princeton Ave&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Mandan Rd at Glen Oaks Apartments&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Memorial Chapel (Outbound)&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Merrimac Dr and Lockney Ave&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Montgomery Hall (Inbound)&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Regents Dr and Stadium Dr&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Riverdale Rd and Lamont Dr&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;University Blvd and 14th Ave&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;University Club Apartments&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;60th Ave and Greenbelt Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;A.V. Williams Building&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Belcrest Rd and Queens Chapel Rd&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Benjamin Building&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;East-West Hwy and W Beale Cir&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Flower Ave and Carroll Ave (Outbound)&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Flower Ave and Domer Ave (Outbound)&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Guilford Drive and Rowalt Drive (Outbound)&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Lastner Ln and Julian Ct (Inbound)&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Metzerott Rd and New Hampshire Ave (Outbound)&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Metzerott Rd at The Delano Apts&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Queensbury Rd and 39th Pl&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Ridge Road and Plateau Place (Outbound)&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Stamp Student Union - Slip&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Van Munching Hall (Inbound)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Annapolis Rd and Riverdale Rd&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Baltimore Ave and Sheridan St&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Cunningham Dr and Pontiac St&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Division of IT&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Dorchester Hall&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Flower Ave and Kennebec (Inbound)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Greenbelt Road and Greenbelt Station Parkway (Outbound)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Lamont Dr and Donoghue Dr&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Metzerott Rd and University Blvd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;New Carrollton Metro Station&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Pontiac St and 63rd Ave (Outbound)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Ridge Rd and Eastway (Inbound)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Riverdale Rd and 67th Ave&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Riverdale Rd and Eastpine Dr&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Shuttle-UM Base (Outbound)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Westway and Ridge Road (Outbound)&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;American Center for Physics&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Baltimore Avenue at Riverdale Park Station (Outbound)&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Carroll Ave and Anne St&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;College Park Shopping Ctr (Outbound)&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Edgewood Road and 49th Avenue (Outbound)&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Flower Ave at Washington Adventist University (Inbound)&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Good Luck Rd and Nashville Rd&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Knox Rd and Rhode Island Ave&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Merrimac Dr and University Blvd&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;New Hampshire Ave and Adelphi Rd (Inbound)&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;New Hampshire Ave and Fox St&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Regents Drive at XFINITY Center (Inbound)&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Riverdale Rd and 63rd Ave&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Riverdale Rd and Mahoney Dr&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;University Methodist Church&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;University View&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:busName:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;116 Purple&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;104 College Park Metro&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;141 Gaithersburg Park &amp; Ride&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;111 Silver Spring&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Shady Grove&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;123 Discovery District&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;117 Blue&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;113 Hyattsville&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;133 Grocery Shopping Shuttle&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;105 Campus Connector&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;142 Columbia Park &amp; Ride&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;131 MGM/Enclave&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;114 University View&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;126 New Carrolton&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;127 Mazza GrandMarc&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;132 The Varsity&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;140 UMB Law&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;118 Gold&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;115 Orange&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;108 Adelphi&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;143 Greenbelt&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;128 The Enclave&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;122 Green&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;109 River Road&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Bowie State - Enclave Express&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:resTransactionType:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;pickup&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;restaurant reservation&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;delivery&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;none&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[usr:Calculation_866380036328996864:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Inexpensive&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Reasonable&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:resCity:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Berwyn Heights&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Fulton&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;New Carrollton&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;University Park&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Clarksburg&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Lanham&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Scaggsville&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Ashton&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Colmar Manor&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Manassas&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Smithsburg&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Brandywine&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Glenn Dale&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Olney&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Wheaton&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Bethesda&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Gaithersburg&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;North Bethesda&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Upper Marlboro&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Aspen Hill&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Crofton&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Maryland City&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Spencerville&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Cheverly&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Landover&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Saint Michaels&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Adelphi&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Clinton&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Largo&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Seabrook&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Capitol Heights&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Kensington&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Riverdale&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Baltimore&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Fairfax&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Mitchellville&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Sterling&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Brentwood&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Greenbelt&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Parkville&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Burtonsville&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Hillandale&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Poolesville&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Centreville&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Kettering&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Rockville&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Chillum&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Langley Park&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Sandy Spring&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Bladensburg&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Gambrills&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;North Brentwood&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Vienna&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Beltsville&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Falls Church&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Mount Rainier&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Takoma Park&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aldie&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Colesville&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Laurel&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Seat Pleasant&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Calverton&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Hyattsville&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Reisterstown&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Bowie&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Glenarden&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Odenton&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Washington DC&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Alexandria&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;College Park&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Lorton&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Silver Spring&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Category and City Wise Restaurant Division'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>What are the number of restaurants, category wise in each city only if number of restaurants are more than 10?</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Restaurant (BUDT758_DB_0504_06)' name='federated.08ox0pt1n8pwz314coa111i8pmoo' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08ox0pt1n8pwz314coa111i8pmoo'>
+            <column caption='Category Name' datatype='string' name='[categoryName]' role='dimension' type='nominal' />
+            <column-instance column='[resId]' derivation='CountD' name='[ctd:resId:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[categoryName]' derivation='None' name='[none:categoryName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[resCity]' derivation='None' name='[none:resCity:nk]' pivot='key' type='nominal' />
+            <column caption='Res City' datatype='string' name='[resCity]' role='dimension' semantic-role='' type='nominal' />
+            <column caption='Res Id' datatype='string' name='[resId]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.08ox0pt1n8pwz314coa111i8pmoo].[ctd:resId:qk]' included-values='in-range'>
+            <min>10</min>
+          </filter>
+          <filter class='categorical' column='[federated.08ox0pt1n8pwz314coa111i8pmoo].[none:resCity:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:resCity:nk]' />
+              <groupfilter function='member' level='[none:resCity:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.08ox0pt1n8pwz314coa111i8pmoo].[none:resCity:nk]</column>
+            <column>[federated.08ox0pt1n8pwz314coa111i8pmoo].[ctd:resId:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.08ox0pt1n8pwz314coa111i8pmoo].[none:categoryName:nk]' value='192' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.08ox0pt1n8pwz314coa111i8pmoo].[ctd:resId:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.08ox0pt1n8pwz314coa111i8pmoo].[none:resCity:nk] / [federated.08ox0pt1n8pwz314coa111i8pmoo].[none:categoryName:nk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{B26BC4FB-CAB9-4766-9201-7FE97129D37A}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Category and City Wise Restaurant Division'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <fields>
+                  <field>[federated.08ox0pt1n8pwz314coa111i8pmoo].[none:resCity:nk]</field>
+                </fields>
+                <multibucket>
+                  <bucket>%null%</bucket>
+                </multibucket>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.08ox0pt1n8pwz314coa111i8pmoo].[none:categoryName:nk]</field>
+            <field>[federated.08ox0pt1n8pwz314coa111i8pmoo].[none:resId:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{388BC6BE-1E59-4881-8A47-29E8BECE2110}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Category and City Wise Restaurant Division' width='192'>
+      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
+      KSj8DPwPZZTCKSmy+NcAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
