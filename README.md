@@ -9,8 +9,9 @@ TerpCravingz has a demand for improvement of user experience by adding analytica
  
 Knowing the background of Team Analytica, including five database students studying Business Analytics at University of Maryland, TERPcravingz has decided to hire Team Analytica for developing this add-on feature for their website.
 
-TerpCravingz is an imaginary restaurant review platform that has real data about the restaurants surrounding the University of Maryland, College Park. As the leader of my group, I ensured that at every step of the journey, we gave our best as a team. The first team assignment we did was to web scrape Yelp restaurant data and University of Maryland Shuttle service data in python.
-After successfully retrieving the unstructured data, we set to clean and manipulate the data to align it to our project’s goals. Following this, we Identified business transactions, entities, attributes, relationships, degrees, constraints, Entity Relationship diagram, normalization, business transactions and functional dependencies. Since we had a lot of text data, we
+TerpCravingz is an imaginary restaurant review platform that has real data about the restaurants surrounding the University of Maryland, College Park. The first team assignment we did was to web scrape Yelp restaurant data and University of Maryland Shuttle service data in python.
+
+After successfully retrieving the unstructured data, we set to clean and manipulate the data to align it to our project’s goals. Following this, we identified business transactions, entities, attributes, relationships, degrees, constraints, Entity Relationship diagram, normalization, business transactions and functional dependencies. Since we had a lot of text data, we
 formulated and generated a text analysis model in python that would classify a review as positive or negative and verified the results with another AFINN Sentiment Model coded in R. Finally, we constructed multiple dashboards in tableau and quite a handful of SQL queries in MySQL to present findings to two types of clients: one who wants to build a restaurant and one
 who wants to find a restaurant. 
 
