@@ -25,10 +25,16 @@ We use Yelp API (https://www.yelp.com/developers/documentation/v3/get_started) a
 Installation:
 
 Please install the following:
+
 (1)	Python 3.0 + 
+
 (2)	Jupyter Notebook
+
 (3)	R Studio
-(5)	Tableau
-(6)	Python libraries -> Pandas, Numpy, re, regex, pprint, string, nltk
-(7)	ArcGIS 10.3
+
+(4)	Tableau
+
+(5)	Python libraries -> Pandas, Numpy, re, regex, pprint, string, nltk
+
+(6)	ArcGIS 10.3
 
