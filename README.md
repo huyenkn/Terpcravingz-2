@@ -1,5 +1,4 @@
 # Terpcravingz-2
-A business model that caters to the day-to-day cravings of UMD, College Park students.
 
 ### Team members: Aishwarya Bhangale, Cindy Chang, Huyen Nguyen, Jiakun Luo, Wenjing Cui.
 
