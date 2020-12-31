@@ -1,7 +1,5 @@
 # Terpcravingz-2
 
-### Team members: Aishwarya Bhangale, Cindy Chang, Huyen Nguyen, Jiakun Luo, Wenjing Cui.
-
 Business Scenario:
 TERPCravingz is a medium sized restaurant review platform that showcases restaurant information, restaurant review information, and UMD Shuttles to the restaurant of choice.
  
@@ -38,3 +36,4 @@ Please install the following:
 
 (6)	ArcGIS 10.3
 
+##### Team members: Aishwarya Bhangale, Cindy Chang, Huyen Nguyen, Jiakun Luo, Wenjing Cui.
